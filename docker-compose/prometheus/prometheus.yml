@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 5s
+scrape_configs:
+  - job_name: "process"
+    static_configs:
+      - targets: ["localhost:8080"]
+#  - job_name: "cadvisor"
+#    static_configs:
+#      - targets: [ "localhost:8080" ]

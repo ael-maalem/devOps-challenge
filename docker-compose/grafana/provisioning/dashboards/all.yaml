@@ -1,0 +1,9 @@
+apiVersion: 1
+
+datasources:
+  - name: "Grafana"
+    type: "file"
+    orgId: 1
+    folder: "Services"
+    options:
+      path: "/etc/grafana/provisioning/dashboards"
