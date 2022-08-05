@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: v1-process
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: v1-process
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: v1-process
+    spec:
+      containers:
+        - name: v1-process
+          image: process:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PORT
+              value: '8080'
+            - name: NODE_ENV
+              value: 'production'
+            - name: REDIS_PORT
+              valueFrom:
+                secretKeyRef:
+                  key: redis-port
+                  name: redis
+            - name: REDIS_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: redis-host
+                  name: redis
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis
+                  key: redis-password
+            - name: REDIS_PROTOCOL
+              valueFrom:
+                secretKeyRef:
+                  key: redis-protocol
+                  name: redis
+          ports:
+            - containerPort: 8080

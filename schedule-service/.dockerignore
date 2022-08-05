@@ -1,0 +1,19 @@
+# Git Specific files
+.git
+.gitignore
+
+# Containerization specific files
+Dockerfile
+.dockerignore
+
+# Development specific files
+.github/
+.idea/
+deploy/
+node_modules/
+.editorconfig
+#.env
+#.env.local
+
+# Documentation folder
+README.md

@@ -1,0 +1,29 @@
+{
+  "name": "schedule-service",
+  "version": "1.0.0",
+  "description": "Improve me",
+  "main": "schedule.js",
+  "scripts": {
+    "schedule": "node schedule.js",
+    "schedule:dev": "nodemon schedule.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lp-Francois/Remazing-Devops-Challenge.git"
+  },
+  "keywords": [
+    "challenge"
+  ],
+  "author": "Francois",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lp-Francois/Remazing-Devops-Challenge/issues"
+  },
+  "homepage": "https://github.com/Lp-Francois/Remazing-Devops-Challenge#readme",
+  "dependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "bull": "^4.8.5",
+    "dotenv": "^16.0.1"
+  }
+}

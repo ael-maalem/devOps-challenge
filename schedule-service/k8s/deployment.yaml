@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: v1-schedule
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: v1-schedule
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: v1-schedule
+    spec:
+      containers:
+        - name: v1-schedule
+          image: schedule:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            #            - name: PORT
+            #              value: '8081'
+            - name: NODE_ENV
+              value: 'production'
+            - name: REDIS_PORT
+              valueFrom:
+                secretKeyRef:
+                  key: redis-port
+                  name: redis
+            - name: REDIS_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: redis-host
+                  name: redis
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis
+                  key: redis-password
+            - name: REDIS_PROTOCOL
+              valueFrom:
+                secretKeyRef:
+                  key: redis-protocol
+                  name: redis

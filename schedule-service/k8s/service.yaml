@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: v01-schedule
+spec:
+  type: ClusterIP
+  selector:
+    app: v1-schedule
+  ports:
+    - name: v1-schedule
+      targetPort: 8081
+      port: 8081
