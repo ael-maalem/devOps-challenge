@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/process-service" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/process-service/deploy" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/schedule-service" vcs="Git" />
-  </component>
-</project>
